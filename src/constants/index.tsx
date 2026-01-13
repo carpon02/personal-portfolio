@@ -37,10 +37,10 @@ import {
 } from 'lucide-react';
 
 export const contactDetails = {
-  email: 'abubakarmukhtar2002@gmail.com',
+  email: 'abubakarmukhtar2002@gmail.com / mukhtardigitalservices@gmail.com',
   phone: '+2348133930690',
-  whatsapp: 'https://wa.me/2348133930690',
-  address: 'Lagos, Nigeria',
+  whatsapp: 'https://wa.me/2349054213940',
+  address: 'Ibadan, Nigeria',
   siteName: 'Mukhtar Digital Services',
 };
 
