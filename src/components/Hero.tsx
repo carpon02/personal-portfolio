@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { staggerContainer, fadeUp } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
-import { SparkleIcon, ArrowRightIcon, Code2, ShoppingCart } from 'lucide-react';
+import { SparkleIcon, Code2, ShoppingCart } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const roles = [
