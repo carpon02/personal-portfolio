@@ -22,13 +22,17 @@ import type {
 import {
   BarChart,
   Briefcase,
+  Code2,
+  Database,
   Facebook,
   Home,
   Instagram,
+  Layers,
   Mail,
   MessageCircle,
   Phone,
   Search,
+  Server,
   Settings,
   ShoppingCart,
   Smartphone,
@@ -78,29 +82,79 @@ const socialLinks: LinksType[] = [
 ];
 
 const projectsData: ProjectType[] = [
+  // ─── Full Stack Projects ──────────────────────────────────────
+  {
+    imgSrc: '/images/project-sabo-charity.jpg',
+    title: 'Sabo Charity Foundation',
+    tags: ['MERN Stack', 'Paystack', 'JWT Auth', 'Cloudinary'],
+    projectLink: 'https://github.com/carpon02/sabocharityfoundation',
+    category: 'fullstack',
+    description:
+      'Full-stack MERN platform for managing donations, events, and volunteers. Features Paystack payments, Google OAuth, admin dashboard, and CI/CD with GitHub Actions.',
+  },
+  {
+    imgSrc: '/images/project-artnaija.jpg',
+    title: 'ArtNaija Marketplace',
+    tags: ['MERN Stack', 'E-commerce', 'Admin Panel'],
+    projectLink: 'https://github.com/carpon02/Artnaija',
+    category: 'fullstack',
+    description:
+      'Digital marketplace showcasing Nigerian art and culture. Artists upload artworks, admins approve listings, buyers browse and purchase securely.',
+  },
+  {
+    imgSrc: '/images/project-animenexa.jpg',
+    title: 'AnimeNexa',
+    tags: ['React', 'Vite', 'API Integration'],
+    projectLink: 'https://github.com/carpon02/AnimeNexa_WebApp',
+    category: 'fullstack',
+    description:
+      'Anime discovery and streaming web app built with React and Vite. Features trending sections, episode lists, and search functionality.',
+  },
+  {
+    imgSrc: '/images/project-carrentals.jpg',
+    title: 'Car Rentals',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Landing Page'],
+    projectLink: 'https://github.com/carpon02/carRentals',
+    category: 'fullstack',
+    description:
+      'Luxury car rental landing page with booking interface, fleet showcase, and responsive modern design.',
+  },
+  // ─── Shopify Projects ─────────────────────────────────────────
   {
     imgSrc: '/images/project-ph-1.jpeg',
     title: 'Pixie Stick 25',
     tags: ['Shopify', 'CRO', 'Email Marketing'],
     projectLink: 'https://pixie-stick.com/',
+    category: 'shopify',
+    description:
+      'High-converting Shopify store with optimized product pages, email flows, and conversion rate optimization.',
   },
   {
     imgSrc: '/images/project-ph-2.jpeg',
     title: 'Eloare Muse Store',
     tags: ['MERN Stack', 'B2B', 'Inventory'],
     projectLink: 'https://www.eloaremuse.com',
+    category: 'shopify',
+    description:
+      'Full-featured B2B e-commerce store with inventory management and wholesale pricing.',
   },
   {
     imgSrc: '/images/project-ph-3.jpeg',
     title: 'Health Haven Store',
     tags: ['Shopify', 'Design', 'SEO'],
     projectLink: 'https://healthhaven-8702.myshopify.com',
+    category: 'shopify',
+    description:
+      'Health and wellness Shopify store with premium theme design and advanced SEO optimization.',
   },
   {
     imgSrc: '/images/project-ph-4.jpeg',
     title: 'Fitromax',
     tags: ['MERN Stack', 'B2B', 'Inventory'],
     projectLink: 'https://www.fitromax.com',
+    category: 'shopify',
+    description:
+      'Fitness e-commerce platform with B2B features, inventory tracking, and performance optimization.',
   },
 ];
 
@@ -149,10 +203,6 @@ const experience: ExperienceType[] = [
 
 const tools: ToolsType[] = [
   {
-    label: 'Shopify',
-    imgSrc: 'https://cdn.worldvectorlogo.com/logos/shopify.svg',
-  },
-  {
     label: 'React',
     imgSrc: '/images/tools/react.svg',
   },
@@ -165,6 +215,34 @@ const tools: ToolsType[] = [
     imgSrc: '/images/tools/mongodb.svg',
   },
   {
+    label: 'Express',
+    imgSrc: 'https://cdn.worldvectorlogo.com/logos/express-109.svg',
+  },
+  {
+    label: 'TypeScript',
+    imgSrc: 'https://cdn.worldvectorlogo.com/logos/typescript.svg',
+  },
+  {
+    label: 'Tailwind',
+    imgSrc: '/images/tools/tailwindcss.svg',
+  },
+  {
+    label: 'Shopify',
+    imgSrc: 'https://cdn.worldvectorlogo.com/logos/shopify.svg',
+  },
+  {
+    label: 'Next.js',
+    imgSrc: 'https://cdn.worldvectorlogo.com/logos/next-js.svg',
+  },
+  {
+    label: 'Redux',
+    imgSrc: 'https://cdn.worldvectorlogo.com/logos/redux.svg',
+  },
+  {
+    label: 'Git',
+    imgSrc: 'https://cdn.worldvectorlogo.com/logos/git-icon.svg',
+  },
+  {
     label: 'Klaviyo',
     imgSrc: 'https://cdn.worldvectorlogo.com/logos/klaviyo.svg',
   },
@@ -172,51 +250,84 @@ const tools: ToolsType[] = [
     label: 'Google SEO',
     imgSrc: 'https://cdn.worldvectorlogo.com/logos/google-icon.svg',
   },
+];
+
+// ─── Full Stack Services ────────────────────────────────────────
+const fullstackServices: ServiceType[] = [
   {
-    label: 'Meta Ads',
-    imgSrc: 'https://cdn.worldvectorlogo.com/logos/meta-1.svg',
+    title: 'Custom Web Applications',
+    desc: 'End-to-end MERN stack applications with React frontends, Node.js APIs, and MongoDB databases. From dashboards to marketplaces.',
+    projects: '15+ Apps',
+    icon: <Code2 className='h-6 w-6 text-cyan-400' />,
   },
   {
-    label: 'Tailwind',
-    imgSrc: '/images/tools/tailwindcss.svg',
+    title: 'REST API Development',
+    desc: 'Scalable, secure backend APIs with Express.js, JWT authentication, and payment integrations like Paystack.',
+    projects: '20+ APIs',
+    icon: <Server className='h-6 w-6 text-cyan-400' />,
+  },
+  {
+    title: 'Database Architecture',
+    desc: 'MongoDB schema design, data modeling, aggregation pipelines, and cloud deployment with Atlas.',
+    projects: '25+ DBs',
+    icon: <Database className='h-6 w-6 text-cyan-400' />,
+  },
+  {
+    title: 'Frontend Development',
+    desc: 'Modern React/Next.js interfaces with Redux state management, Framer Motion animations, and responsive Tailwind CSS.',
+    projects: '30+ UIs',
+    icon: <Layers className='h-6 w-6 text-cyan-400' />,
+  },
+  {
+    title: 'Mobile App Dev',
+    desc: 'Custom mobile applications using React Native for iOS and Android with shared codebase.',
+    projects: '10+ Apps',
+    icon: <Smartphone className='h-6 w-6 text-cyan-400' />,
+  },
+  {
+    title: 'Custom Integration',
+    desc: 'Third-party API integrations, OAuth flows, payment gateways, and cloud services (Cloudinary, Sentry, etc.).',
+    projects: '20+ Systems',
+    icon: <Zap className='h-6 w-6 text-cyan-400' />,
   },
 ];
 
-const services: ServiceType[] = [
+// ─── Shopify Services ───────────────────────────────────────────
+const shopifyServices: ServiceType[] = [
   {
     title: 'Shopify Store Setup',
-    desc: 'High-converting store design and development. From simple setups to complex custom themes.',
+    desc: 'High-converting store design and development. From simple setups to complex custom themes with Liquid.',
     projects: '40+ Stores',
     icon: <ShoppingCart className='h-6 w-6 text-green-400' />,
   },
   {
     title: 'SEO & Performance',
-    desc: 'Rank higher on Google and speed up your site. Keyword research, meta tags, and speed optimization.',
+    desc: 'Rank higher on Google and speed up your site. Keyword research, meta tags, and Core Web Vitals optimization.',
     projects: '25+ Audits',
     icon: <Search className='h-6 w-6 text-green-400' />,
   },
   {
     title: 'Email Automation',
-    desc: 'Set up Klaviyo flows (Welcome, Abandoned Cart) that generate revenue while you sleep.',
+    desc: 'Set up Klaviyo flows (Welcome, Abandoned Cart, Post-Purchase) that generate revenue while you sleep.',
     projects: '15+ Setups',
     icon: <Mail className='h-6 w-6 text-green-400' />,
   },
   {
-    title: 'Mobile App Dev',
-    desc: 'Custom mobile applications using React Native and Flutter for iOS and Android.',
-    projects: '10+ Apps',
-    icon: <Smartphone className='h-6 w-6 text-green-400' />,
-  },
-  {
     title: 'CRO & Audits',
-    desc: 'Detailed analysis of your store to find why visitors are not buying and fix it.',
+    desc: 'Detailed analysis of your store to find why visitors are not buying and fix it. A/B testing and heatmap analysis.',
     projects: 'Ongoing',
     icon: <BarChart className='h-6 w-6 text-green-400' />,
   },
   {
-    title: 'Custom Integration',
-    desc: 'API integrations, custom plugins, and backend systems using MERN stack.',
-    projects: '20+ Systems',
+    title: 'Theme Customization',
+    desc: 'Custom Shopify theme development with Liquid, advanced sections, and brand-perfect design systems.',
+    projects: '35+ Themes',
+    icon: <Layers className='h-6 w-6 text-green-400' />,
+  },
+  {
+    title: 'App Integration',
+    desc: 'Connect and configure Shopify apps for reviews, upsells, subscriptions, and inventory management.',
+    projects: '50+ Apps',
     icon: <Zap className='h-6 w-6 text-green-400' />,
   },
 ];
@@ -270,7 +381,8 @@ export {
   education,
   experience,
   tools,
-  services,
+  fullstackServices,
+  shopifyServices,
   navLinks,
   statsData,
   testimonials,

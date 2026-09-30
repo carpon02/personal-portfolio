@@ -2,7 +2,34 @@ import { fadeUp, staggerContainer } from '@/lib/animations';
 import { motion } from 'motion/react';
 import { SectionHeader } from './SectionHeader';
 import { Button } from './ui/button';
-import { ArrowRightIcon, CheckCircle2 } from 'lucide-react';
+import { ArrowRightIcon, CheckCircle2, Code2, ShoppingCart, Rocket, Users } from 'lucide-react';
+
+const processSteps = [
+  {
+    icon: <Users className='size-6' />,
+    title: 'Discovery',
+    desc: 'We discuss your goals, target audience, and technical requirements.',
+    step: '01',
+  },
+  {
+    icon: <Code2 className='size-6' />,
+    title: 'Development',
+    desc: 'I build your solution using the best tech stack for your needs.',
+    step: '02',
+  },
+  {
+    icon: <ShoppingCart className='size-6' />,
+    title: 'Optimization',
+    desc: 'SEO, speed optimization, and conversion rate improvements.',
+    step: '03',
+  },
+  {
+    icon: <Rocket className='size-6' />,
+    title: 'Launch & Scale',
+    desc: 'Deploy, monitor, and iterate based on real user data.',
+    step: '04',
+  },
+];
 
 export const About = () => {
   const philosophy = [
@@ -10,13 +37,15 @@ export const About = () => {
     'Trust through transparency',
     'Client education & support',
     'Fast turnaround times',
+    'Clean, maintainable code',
+    'Scalable architecture',
   ];
 
   return (
     <motion.section
       initial='hidden'
       whileInView='visible'
-      viewport={{ amount: 0.3, once: true }}
+      viewport={{ amount: 0.2, once: true }}
       variants={staggerContainer(0)}
       className='py-24 relative'
       id='about'
@@ -27,42 +56,7 @@ export const About = () => {
           subtitle='About Me'
         />
 
-        <div className='mt-16 flex flex-col md:flex-row gap-12 items-center'>
-          {/* Visual/Image Side */}
-          <motion.div
-            variants={fadeUp}
-            className='w-full md:w-1/2'
-          >
-            <div className='relative aspect-square md:aspect-4/3 rounded-3xl overflow-hidden bg-neutral-900 border border-white/5'>
-              <div className='absolute inset-0 bg-linear-to-br from-green-500/20 to-blue-500/20' />
-              <div className='absolute inset-0 flex items-center justify-center'>
-                <div className='w-3/4 h-auto bg-neutral-950/50 backdrop-blur-xl rounded-2xl border border-white/10 p-8 flex flex-col justify-center'>
-                  <h3 className='text-xl font-bold bg-linear-to-r from-white to-white/60 bg-clip-text text-transparent mb-4'>
-                    Software Engineer & E-commerce Expert
-                  </h3>
-                  <p className='text-neutral-400 text-sm mb-4'>
-                    I bridge the gap between complex technical solutions and
-                    profitable business strategies.
-                  </p>
-                  <div className='space-y-2'>
-                    {philosophy.map((item, i) => (
-                      <div
-                        key={i}
-                        className='flex items-center gap-2'
-                      >
-                        <CheckCircle2
-                          size={14}
-                          className='text-green-400 shrink-0'
-                        />
-                        <span className='text-xs text-neutral-300'>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
+        <div className='mt-16 flex flex-col md:flex-row gap-12 items-start'>
           {/* Content Side */}
           <motion.div
             variants={staggerContainer(0.2)}
@@ -72,22 +66,46 @@ export const About = () => {
               variants={fadeUp}
               className='text-lg text-neutral-300 leading-relaxed'
             >
-              I am <strong>Abubakar Mukhtar</strong>, a specialist in building
-              high-performing digital products. With expertise in the MERN Stack
-              and Shopify ecosystem, I help businesses stop guessing and start
-              growing.
+              I am <strong>Abubakar Mukhtar</strong>, a{' '}
+              <span className='text-cyan-400 font-semibold'>
+                Full Stack Developer
+              </span>{' '}
+              and{' '}
+              <span className='text-green-400 font-semibold'>
+                Shopify Expert
+              </span>{' '}
+              based in Nigeria. I specialize in building high-performing digital
+              products using the MERN stack and Shopify ecosystem.
             </motion.p>
 
             <motion.p
               variants={fadeUp}
               className='text-lg text-neutral-400 leading-relaxed'
             >
-              My approach is data-driven. I don't just design extensive
-              websites; I build systems that capture leads, convert visitors,
-              and retain customers. Whether you are launching a new store or
-              scaling an existing one, I provide the technical backbone you
-              need.
+              From charity platforms and art marketplaces to e-commerce stores,
+              I build systems that capture leads, convert visitors, and retain
+              customers. Whether you need a custom full-stack application or a
+              revenue-generating Shopify store, I provide the technical backbone
+              you need.
             </motion.p>
+
+            <motion.div
+              variants={fadeUp}
+              className='grid grid-cols-2 gap-3 pt-2'
+            >
+              {philosophy.map((item, i) => (
+                <div
+                  key={i}
+                  className='flex items-center gap-2'
+                >
+                  <CheckCircle2
+                    size={14}
+                    className='text-green-400 shrink-0'
+                  />
+                  <span className='text-sm text-neutral-300'>{item}</span>
+                </div>
+              ))}
+            </motion.div>
 
             <motion.div
               variants={fadeUp}
@@ -105,6 +123,37 @@ export const About = () => {
                 </a>
               </Button>
             </motion.div>
+          </motion.div>
+
+          {/* Process Steps Side */}
+          <motion.div
+            variants={staggerContainer(0.15)}
+            className='w-full md:w-1/2'
+          >
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+              {processSteps.map((step, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeUp}
+                  className='relative p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md group hover:border-white/20 hover:bg-white/[0.08] transition-all duration-300'
+                >
+                  <span className='absolute top-4 right-4 text-5xl font-black text-white/5 group-hover:text-white/10 transition-colors'>
+                    {step.step}
+                  </span>
+                  <div className='relative z-10'>
+                    <div className='size-12 rounded-xl bg-linear-to-br from-green-500/20 to-cyan-500/20 flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform'>
+                      {step.icon}
+                    </div>
+                    <h4 className='text-lg font-bold text-white mb-2'>
+                      {step.title}
+                    </h4>
+                    <p className='text-sm text-neutral-400 leading-relaxed'>
+                      {step.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

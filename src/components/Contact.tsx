@@ -18,7 +18,7 @@ import { usePaystackPayment } from 'react-paystack';
 export const Contact = () => {
   const [isSending, setIsSending] = useState(false);
   const [email, setEmail] = useState('');
-  const [service, setService] = useState('Basic Package ($250)');
+  const [service, setService] = useState('Full Stack — Starter ($500)');
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
@@ -31,16 +31,24 @@ export const Contact = () => {
 
   const getAmount = (selectedService: string) => {
     switch (selectedService) {
-      case 'Basic Package ($250)':
-        return 250 * 100; // $250 in cents
-      case 'Advanced Package ($400)':
-        return 400 * 100; // $400 in cents
-      case 'Premium Package ($550)':
-        return 550 * 100; // $550 in cents
-      case 'Custom B2B Project':
-        return 0; // Custom quote needed
+      // Full Stack
+      case 'Full Stack — Starter ($500)':
+        return 500 * 100;
+      case 'Full Stack — Professional ($1,200)':
+        return 1200 * 100;
+      case 'Full Stack — Enterprise ($2,500)':
+        return 2500 * 100;
+      // Shopify
+      case 'Shopify — Basic ($250)':
+        return 250 * 100;
+      case 'Shopify — Advanced ($400)':
+        return 400 * 100;
+      case 'Shopify — Premium ($550)':
+        return 550 * 100;
+      case 'Custom Project':
+        return 0;
       case 'Free Audit Request':
-        return 0; // Free
+        return 0;
       default:
         return 0;
     }
@@ -73,7 +81,7 @@ export const Contact = () => {
     setEmail('');
     setName('');
     setMessage('');
-    setService('Basic Package ($250)');
+    setService('Full Stack — Starter ($500)');
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -164,8 +172,15 @@ This inquiry was submitted via your portfolio contact form.
                 Let's start your project
               </h3>
               <p className='text-neutral-400 leading-relaxed text-lg'>
-                I'm available for new projects. Whether you need a full store
-                setup, an audit, or a custom B2B solution, I'm here to help.
+                I'm available for new projects. Whether you need a{' '}
+                <span className='text-cyan-400 font-medium'>
+                  full-stack web app
+                </span>
+                , a{' '}
+                <span className='text-green-400 font-medium'>
+                  Shopify store
+                </span>
+                , an audit, or a custom solution — I'm here to help.
               </p>
             </div>
 
@@ -179,7 +194,7 @@ This inquiry was submitted via your portfolio contact form.
                 </div>
                 <div>
                   <p className='text-sm text-neutral-500'>Email Me</p>
-                  <p className='text-white font-medium'>
+                  <p className='text-white font-medium text-sm'>
                     {contactDetails.email}
                   </p>
                 </div>
@@ -193,7 +208,9 @@ This inquiry was submitted via your portfolio contact form.
                   <Phone size={20} />
                 </div>
                 <div>
-                  <p className='text-sm text-neutral-500'>WhatsApp (Fastest)</p>
+                  <p className='text-sm text-neutral-500'>
+                    WhatsApp (Fastest)
+                  </p>
                   <p className='text-white font-medium'>
                     {contactDetails.phone}
                   </p>
@@ -304,36 +321,60 @@ This inquiry was submitted via your portfolio contact form.
                       value={service}
                       onChange={(e) => setService(e.target.value)}
                     >
-                      <option
-                        className='bg-neutral-900'
-                        value='Basic Package ($250)'
-                      >
-                        Basic Package ($250)
-                      </option>
-                      <option
-                        className='bg-neutral-900'
-                        value='Advanced Package ($400)'
-                      >
-                        Advanced Package ($400)
-                      </option>
-                      <option
-                        className='bg-neutral-900'
-                        value='Premium Package ($550)'
-                      >
-                        Premium Package ($550)
-                      </option>
-                      <option
-                        className='bg-neutral-900'
-                        value='Custom B2B Project'
-                      >
-                        Custom B2B Project
-                      </option>
-                      <option
-                        className='bg-neutral-900'
-                        value='Free Audit Request'
-                      >
-                        Free Audit Request
-                      </option>
+                      <optgroup label='🖥️ Full Stack Development'>
+                        <option
+                          className='bg-neutral-900'
+                          value='Full Stack — Starter ($500)'
+                        >
+                          Full Stack — Starter ($500)
+                        </option>
+                        <option
+                          className='bg-neutral-900'
+                          value='Full Stack — Professional ($1,200)'
+                        >
+                          Full Stack — Professional ($1,200)
+                        </option>
+                        <option
+                          className='bg-neutral-900'
+                          value='Full Stack — Enterprise ($2,500)'
+                        >
+                          Full Stack — Enterprise ($2,500)
+                        </option>
+                      </optgroup>
+                      <optgroup label='🛒 Shopify Development'>
+                        <option
+                          className='bg-neutral-900'
+                          value='Shopify — Basic ($250)'
+                        >
+                          Shopify — Basic ($250)
+                        </option>
+                        <option
+                          className='bg-neutral-900'
+                          value='Shopify — Advanced ($400)'
+                        >
+                          Shopify — Advanced ($400)
+                        </option>
+                        <option
+                          className='bg-neutral-900'
+                          value='Shopify — Premium ($550)'
+                        >
+                          Shopify — Premium ($550)
+                        </option>
+                      </optgroup>
+                      <optgroup label='✨ Other'>
+                        <option
+                          className='bg-neutral-900'
+                          value='Custom Project'
+                        >
+                          Custom Project
+                        </option>
+                        <option
+                          className='bg-neutral-900'
+                          value='Free Audit Request'
+                        >
+                          Free Audit Request
+                        </option>
+                      </optgroup>
                     </select>
                   </div>
 
@@ -348,7 +389,7 @@ This inquiry was submitted via your portfolio contact form.
                       name='message'
                       id='message'
                       rows={4}
-                      placeholder='Tell me about your store goals...'
+                      placeholder='Tell me about your project goals...'
                       className='w-full bg-black/40 border border-white/10 rounded-xl py-3 px-4 text-white placeholder:text-neutral-600 focus:outline-none focus:border-green-500/50 focus:ring-1 focus:ring-green-500/50 transition-all resize-none'
                       required
                       value={message}

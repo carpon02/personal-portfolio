@@ -6,9 +6,14 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqs = [
   {
-    question: 'How long does it take to complete a store?',
+    question: 'What types of projects do you build?',
     answer:
-      'Timelines vary by package. The Basic Package takes about 7 days, Advanced takes 10-14 days, and Premium takes 14-21 days. Custom B2B projects depend on complexity.',
+      'I offer two core services: Full Stack Development (MERN stack web apps, dashboards, marketplaces, APIs) and Shopify Development (store setup, theme customization, SEO, email automation). Whether you need a charity platform, art marketplace, or a high-converting Shopify store — I\'ve got you covered.',
+  },
+  {
+    question: 'How long does it take to complete a project?',
+    answer:
+      'Timelines vary by project type and complexity. Full Stack projects typically take 7–30 days depending on the package. Shopify stores range from 7–21 days. Custom B2B or enterprise projects depend on scope — we\'ll agree on milestones before starting.',
   },
   {
     question: 'Do you offer payment plans?',
@@ -18,17 +23,22 @@ const faqs = [
   {
     question: 'What is included in the Free Audit?',
     answer:
-      "My free audit includes a detailed review of your current store's design, speed, SEO performance, and conversion killers. You'll get a PDF report with actionable recommendations.",
+      "My free audit includes a detailed review of your current store's design, speed, SEO performance, and conversion killers. You'll get a PDF report with actionable recommendations — whether it's a Shopify store or a full-stack web app.",
   },
   {
-    question: 'Do you work with existing stores or only new ones?',
+    question: 'What tech stack do you use for full-stack projects?',
     answer:
-      "Both! I help new owners launch effectively and existing owners fix low sales. My 'Advanced' and 'Premium' packages are perfect for revamping underperforming stores.",
+      'My primary stack is MERN — MongoDB, Express.js, React (with Next.js for SSR), and Node.js. I also use TypeScript, Redux Toolkit, TailwindCSS, Framer Motion, Paystack/Stripe for payments, Cloudinary for media, and GitHub Actions for CI/CD.',
   },
   {
-    question: 'Will I be able to manage the store myself?',
+    question: 'Do you provide ongoing support after launch?',
     answer:
-      'Absolutely. I provide client education and support after launch to ensure you know how to add products, manage orders, and check your analytics.',
+      'Absolutely. Every package includes post-launch support (1 week to 1 month depending on the tier). I also offer monthly retainer plans for ongoing maintenance, feature updates, and performance monitoring.',
+  },
+  {
+    question: 'Will I be able to manage the project myself after delivery?',
+    answer:
+      'Yes. For Shopify stores, I provide training so you can manage products and orders. For full-stack apps, I deliver clean, documented code with a README, and can provide a walkthrough session to help your team maintain it.',
   },
 ];
 

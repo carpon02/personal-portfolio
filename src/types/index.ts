@@ -1,5 +1,5 @@
 /**
- * @copyright 2025 codewithsadee
+ * @copyright 2025 Mukhtar Digital Services
  * @license Apache-2.0
  */
 
@@ -10,6 +10,8 @@ export type ProjectType = {
   title: string;
   tags: string[];
   projectLink: string;
+  category: 'fullstack' | 'shopify';
+  description?: string;
 };
 
 export type ExperienceType = {

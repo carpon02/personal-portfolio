@@ -16,7 +16,7 @@ export const Profile = () => {
             Mukhtar
           </h1>
           <p className='text-sm font-medium text-neutral-400'>
-            MERN Stack Developer & Shopify Developer
+            Full Stack Developer & Shopify Expert
           </p>
         </div>
 
@@ -35,7 +35,7 @@ export const Profile = () => {
               Specialization
             </p>
             <p className='text-base text-neutral-200'>
-              MERN Stack Developer & Shopify Developer
+              MERN Stack & Shopify Development
             </p>
           </div>
 
@@ -44,6 +44,16 @@ export const Profile = () => {
               Based in
             </p>
             <p className='text-base text-neutral-200'>Nigeria, Ibadan</p>
+          </div>
+
+          {/* Dual service badges */}
+          <div className='flex gap-2'>
+            <span className='px-3 py-1.5 text-xs font-semibold rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'>
+              Full Stack
+            </span>
+            <span className='px-3 py-1.5 text-xs font-semibold rounded-full bg-green-500/10 text-green-400 border border-green-500/20'>
+              Shopify
+            </span>
           </div>
         </div>
 
@@ -68,8 +78,9 @@ export const Profile = () => {
         <Button
           className='w-full rounded-xl bg-primary py-6 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] hover:shadow-primary/30 active:scale-[0.98]'
           size='lg'
+          asChild
         >
-          Let's Work!
+          <a href='#contact'>Let's Work!</a>
         </Button>
       </div>
     </motion.aside>
